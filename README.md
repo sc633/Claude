@@ -6,9 +6,12 @@ Repositório pessoal de configuração do Claude Code.
 
 **ECC — Everything Claude Code** (plugin `ecc@ecc`, fonte oficial `affaan-m/ECC`)
 
-- `.claude/settings.json` registra o marketplace do ECC e ativa o plugin.
-  Toda sessão aberta com este repositório (celular, web ou PC) instala/atualiza
-  o ECC automaticamente: agentes, skills, comandos e hooks.
+- **Sessões na nuvem (celular/web):** o ECC é instalado pelo *setup script* do
+  ambiente "Default" (configurações do ambiente na nuvem), que roda
+  `claude plugin marketplace add affaan-m/ECC` e `claude plugin install ecc@ecc`
+  no início de cada sessão. O `settings.json` do repositório não basta na nuvem.
+- **No PC:** `.claude/settings.json` registra o marketplace do ECC e ativa o
+  plugin; o Claude Code oferece instalar ao abrir o repositório.
 - `.claude/rules/ecc/common/` contém as regras gerais do ECC (estilo de código,
   testes, segurança, git...). Plugins não distribuem regras, então elas ficam
   copiadas aqui.
